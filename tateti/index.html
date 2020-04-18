@@ -1,0 +1,31 @@
+<html>
+	<head>
+		<style>
+			 body{
+			 	zoom:150%;
+				background:black;
+				color:white;
+			}
+			#tablero button{
+				width:100px;
+				height:100px;
+				background:black;
+				color:white;
+			}
+		</style>
+		<script src="json-extendido.js"></script>
+		<script src="script.js"></script>
+	</head>
+	<body>
+		<h2>Tateti</h2>
+		<div id="formulario">
+			<input name="usuarioA" placeholder="Primer Usuario"><br>
+			<input name="usuarioB" placeholder="Segundo Usuario"><br>
+		</div>
+		<button onclick="tateti.iniciarTablero(tablero)">Empezar</button><br>
+		<spam id="turno_tablero"></spam><br>
+		<spam id="info_tablero"></spam><br>
+		<div id="tablero"></div>
+	</body>
+	
+</html>
