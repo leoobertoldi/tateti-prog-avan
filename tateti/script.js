@@ -82,10 +82,10 @@ tateti.step=function (e){
 	if (tateti.ganador==1){
 		info_tablero.innerText="Ha ganado cruz!";
 	}
-	if (tateti.ganador==-1){
+	else if (tateti.ganador==-1){
 		info_tablero.innerText="Ha ganado circulo!";
 	}
-	if (tateti.turno==9){
+	else if (tateti.turno==9){
 	 tateti.ganador=true;
 	 info_tablero.innerText="Empate!";
 	}
