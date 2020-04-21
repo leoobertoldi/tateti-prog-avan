@@ -1,0 +1,50 @@
+<html>
+	<head>
+		<style>
+			 body{
+			 	zoom:150%;
+				background:black;
+				color:white;
+				min-width:1000px;
+			}
+			#tablero button{
+				width:100px;
+				height:100px;
+				background:black;
+				color:white;
+			}
+		</style>
+		<script src="json-extendido.js"></script>
+		<script src="tateti.js"></script>
+		<script src="gui.js"></script>
+	</head>
+	<body>
+		<h2>Tateti</h2>
+		<div id="formulario">
+			<input name="jugadorA" placeholder="Primer Usuario"><br>
+			<input name="jugadorB" placeholder="Segundo Usuario"><br>
+		</div>
+		<div id="output">
+			<button onclick="gui.Empezar()">Empezar</button>
+			<button onclick="gui.ReiniciarPuntaje()">Reiniciar</button><br>
+			<spam>Puntaje </spam>
+			<spam name="jugadorA"></spam>
+			<spam name="puntajeA"></spam>
+			
+			<br>
+			<spam>Puntaje </spam>
+			<spam name="jugadorB"></spam>
+			<spam name="puntajeB"></spam>
+			<br>
+			<spam>Empates: </spam>
+			<spam name="empates"></spam>
+			<br>
+			<spam> Es turno de: </spam>
+			<spam name="turno"></spam>
+			<br>
+			<spam name="estado"></spam><br>
+			<div id="tablero"></div>
+		</div>
+	</body>
+	
+</html>
