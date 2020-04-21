@@ -5,6 +5,7 @@
 			 	zoom:150%;
 				background:black;
 				color:white;
+				min-width:1000px;
 			}
 			#tablero button{
 				width:100px;
@@ -22,7 +23,12 @@
 			<input name="usuarioA" placeholder="Primer Usuario"><br>
 			<input name="usuarioB" placeholder="Segundo Usuario"><br>
 		</div>
-		<button onclick="tateti.iniciarTablero(tablero)">Empezar</button><br>
+		<button onclick="tateti.iniciarTablero(tablero)">Empezar</button>
+		<button onclick="tateti.reiniciarPuntaje()">Reiniciar Puntaje</button><br>
+		<spam>Puntaje X: </spam>
+		<spam id="puntajeX"></spam><br>
+		<spam>Puntaje O: </spam>
+		<spam id="puntajeO"></spam><br>
 		<spam id="turno_tablero"></spam><br>
 		<spam id="info_tablero"></spam><br>
 		<div id="tablero"></div>

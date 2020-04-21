@@ -1,6 +1,16 @@
-var tateti={turno:0,jugadores:null,tablero:null};
+var tateti={turno:0,jugadores:null,tablero:null,puntajeX:0,puntajeO:0};
+tateti.reiniciarPuntaje=function (){
+	tateti.puntajeO=0;
+	tateti.puntajeX=0;
+	tateti.MostrarPuntaje();
+}
+tateti.MostrarPuntaje=function (){
+	puntajeO.innerText=tateti.puntajeO;
+	puntajeX.innerText=tateti.puntajeX;
+}
 
 tateti.iniciarTablero=function(tablero){
+	tateti.MostrarPuntaje();
 	tablero.innerHTML="";
 	info_tablero.innerText="";
 	this.ganador=false;
@@ -21,7 +31,7 @@ tateti.iniciarTablero=function(tablero){
 		}
 		tablero.appendChild(document.createElement("br"));
 	}
-	turno_tablero.innerText="Es turno de Cruz";
+	turno_tablero.innerText="Es turno de Cruz "+tateti.jugadores.usuarioA;
 }
 tateti.victoria=function (){//devuelve -1 0 1 -> circulo nadie cruz
 	var sum=0;
@@ -67,12 +77,12 @@ tateti.step=function (e){
 	if (tateti.turno%2==0){
 		tateti.tablero[button.j][button.i]=1;
 		button.innerText="X";
-		turno_tablero.innerText="Es turno de Circulo";
+		turno_tablero.innerText="Es turno de Circulo "+tateti.jugadores.usuarioB;
 	}
 	else {
 		tateti.tablero[button.j][button.i]=-1;
 		button.innerText="O";
-		turno_tablero.innerText="Es turno de Cruz";
+		turno_tablero.innerText="Es turno de Cruz "+tateti.jugadores.usuarioA;
 	}
 	tateti.turno++;
 	tateti.ganador=tateti.victoria();
@@ -80,14 +90,19 @@ tateti.step=function (e){
 		turno_tablero.innerText="";
 	}
 	if (tateti.ganador==1){
-		info_tablero.innerText="Ha ganado cruz!";
+		info_tablero.innerText="Ha ganado cruz! "+tateti.jugadores.usuarioA;
+		tateti.puntajeX++;
+		tateti.MostrarPuntaje();
 	}
 	else if (tateti.ganador==-1){
-		info_tablero.innerText="Ha ganado circulo!";
+		info_tablero.innerText="Ha ganado circulo! "+tateti.jugadores.usuarioB;
+		tateti.puntajeO++;
+		tateti.MostrarPuntaje();
 	}
 	else if (tateti.turno==9){
 	 tateti.ganador=true;
 	 info_tablero.innerText="Empate!";
+	 tateti.MostrarPuntaje();
 	}
 }
 
